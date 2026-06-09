@@ -144,10 +144,7 @@
                 <ImageView
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:text="expand_more"
-                    android:src="@drawable/ic_see_more"
-                    android:textColor="@color/design_default_color_primary_dark"
-                    android:textSize="12sp" />
+                    android:src="@drawable/ic_see_more" />
 
             </LinearLayout>
 
@@ -165,7 +162,6 @@
                         android:layout_height="180dp"
                         android:adjustViewBounds="true"
                         android:scaleType="centerCrop"
-
                         android:src="@android:drawable/btn_star"/>
                     
                     <TextView

@@ -2,10 +2,12 @@
 <resources>
 
     <color name="colorBackgroundPrimary">#030d17</color>
+    <color name="colorPotentialSecondary">#223047</color>
     <color name="colorBackgroundSecondary">#1A1A1F</color>
+    <color name="colorBackgroundImage">#D9101A2B</color>"
     <color name="colorSurface">#202028</color>
 
-    <color name="colorTextPrimary">#a7a69f</color>
+    <color name="colorTextPrimary">#e6e4da</color>
     <color name="colorTextSecondary">#89796d</color>
     <color name="colorTextTertiary">#6C6C75</color>
 
