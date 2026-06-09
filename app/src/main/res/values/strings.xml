@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">NovelRepo</string>
     <string name="library">Library</string>
     <string name="discover">Discover</string>
@@ -10,7 +10,12 @@
     <string name="recent_book_name">The Hobbit</string>
     <string name="continue_reading">Continue reading</string>
     <string name="recent_progress">62%</string>
-    <string name="recommended_title_1">recommended_title_1</string>
+    <string name="recommended_title_1" tools:ignore="Typos">recommended_title_1</string>
     <string name="recommended_title_3">place</string>
     <string name="recommended_title_2">place\n</string>
+    <string name="all">All</string>
+    <string name="reading">Reading</string>
+    <string name="completed">Completed</string>
+    <string name="favorites">Favorites</string>
+    <string name="recommended">Recommended for you</string>
 </resources>

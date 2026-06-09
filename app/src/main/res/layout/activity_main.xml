@@ -27,31 +27,42 @@
             android:paddingTop="16dp"
             android:paddingEnd="16dp"
             android:paddingBottom="16dp"
+
             android:visibility="visible">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="3dp"
-                    android:text="@string/welcome_back"
-                    android:textColor="@color/colorTextPrimary"
-                    android:textSize="16sp"
-                    android:visibility="visible" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/username"
-                    android:textColor="@color/colorTextPrimary"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:visibility="visible" />
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="200dp"
+                  android:orientation="vertical"
+                  android:background="@drawable/home_screen">
+
+                      <TextView
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_marginEnd="3dp"
+                          android:text="@string/welcome_back"
+                          android:textColor="@color/colorTextPrimary"
+                          android:textSize="16sp"
+                          android:visibility="visible" />
+
+                      <TextView
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="@string/username"
+                          android:textColor="@color/colorTextPrimary"
+                          android:layout_marginStart="35dp"
+                          android:textSize="16sp"
+                          android:textStyle="bold" />
+
+              </LinearLayout>
+
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="18dp"
+                android:layout_marginTop="-30dp"
                 android:padding="14dp">
 
                 <ImageView
@@ -60,7 +71,7 @@
                     android:layout_height="120dp"
                     android:adjustViewBounds="true"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/Hobbit_Cover"
+                    android:src="@drawable/hobbit_cover"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -88,7 +99,7 @@
                     app:layout_constraintTop_toBottomOf="@id/continue_reading" />=
 
                 <ProgressBar
-                    android:id="@+id/progressBar"
+                    android:id="@+id/progressBarMain"
                     style="?android:attr/progressBarStyleHorizontal"
                     android:layout_width="0dp"
                     android:layout_height="8dp"
@@ -109,10 +120,10 @@
                     android:textColor="@color/colorTextSecondary"
                     android:text="@string/recent_progress"
                     android:textSize="14sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/progressBar"
+                    app:layout_constraintBottom_toBottomOf="@+id/progressBarMain"
 
-                    app:layout_constraintStart_toEndOf="@+id/progressBar"
-                    app:layout_constraintTop_toTopOf="@+id/progressBar" />
+                    app:layout_constraintStart_toEndOf="@+id/progressBarMain"
+                    app:layout_constraintTop_toTopOf="@+id/progressBarMain" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <LinearLayout
@@ -126,7 +137,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Recommended for you"
+                    android:text="@string/recommended"
                     android:textColor="@color/colorTextSecondary"
                     android:textSize="16sp" />
 
@@ -155,7 +166,7 @@
                         android:adjustViewBounds="true"
                         android:scaleType="centerCrop"
 
-                        android:src="recommended_cover_1"/>
+                        android:src="@android:drawable/btn_star"/>
                     
                     <TextView
                         android:layout_width="wrap_content"
@@ -176,7 +187,7 @@
                         android:layout_height="180dp"
                         android:adjustViewBounds="true"
                         android:scaleType="centerCrop"
-                        android:src="recommended_cover_2" />
+                        android:src="@android:drawable/btn_star" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -191,12 +202,13 @@
                     android:layout_width="120dp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+
                     <ImageView
                         android:layout_width="120dp"
                         android:layout_height="180dp"
                         android:adjustViewBounds="true"
                         android:scaleType="centerCrop"
-                        android:src="recommended_cover_3"/>
+                        android:src="@android:drawable/btn_star" />
 
                     <TextView
                         android:layout_width="wrap_content"
