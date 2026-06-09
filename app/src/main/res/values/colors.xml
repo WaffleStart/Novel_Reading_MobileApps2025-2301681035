@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+
+    <color name="colorBackgroundPrimary">#030d17</color>
+    <color name="colorBackgroundSecondary">#1A1A1F</color>
+    <color name="colorSurface">#202028</color>
+
+    <color name="colorTextPrimary">#a7a69f</color>
+    <color name="colorTextSecondary">#89796d</color>
+    <color name="colorTextTertiary">#6C6C75</color>
+
+    <color name="colorAccent">#6A5CFF</color>
+    <color name="colorAccentLight">#7A6BFF</color>
+
+    <color name="colorStar">#F5C86A</color>
+
+    <color name="colorProgressFill">#6A5CFF</color>
+    <color name="colorProgressTrack">#2A2A33</color>
+
 </resources>
