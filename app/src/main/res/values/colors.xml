@@ -19,4 +19,5 @@
     <color name="colorProgressFill">#6A5CFF</color>
     <color name="colorProgressTrack">#2A2A33</color>
 
+    <color name="colorPlaceholder">#222222</color>
 </resources>
