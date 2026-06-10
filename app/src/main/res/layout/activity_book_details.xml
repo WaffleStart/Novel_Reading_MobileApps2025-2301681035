@@ -49,12 +49,16 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical">
 
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/btnBack"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        app:srcCompat="@drawable/ic_arrow_back"
-                        />
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/ic_arrow_back"
+                        android:scaleType="fitCenter"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
 
                 </LinearLayout>
 
@@ -71,7 +75,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/hobbit_cover"/>
+                    android:src="@drawable/hobbit"/>
             </com.google.android.material.card.MaterialCardView>
 
             <TextView
@@ -94,6 +98,7 @@
                 android:text="J. R. R. Tolkien" />
 
             <com.google.android.material.chip.ChipGroup
+                android:id="@+id/genreChipGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="14dp"
@@ -141,6 +146,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/detail_book_rating_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="★ 4.8"
@@ -149,6 +155,7 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/detail_book_rating_count"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="2.3K Ratings"
@@ -171,20 +178,22 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/detail_book_pages"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="320"
                         android:textStyle="bold"
                         android:textSize="18sp"
-                        android:textColor="@color/colorTextPrimary"/>
+                        android:textColor="@color/colorTextSecondary"/>
 
                     <TextView
+
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Pages"
                         android:textStyle="bold"
                         android:textSize="13sp"
-                        android:textColor="@color/colorTextTertiary"/>
+                        android:textColor="@color/colorTextSecondary"/>
                 </LinearLayout>
 
                 <View
@@ -201,6 +210,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/detail_book_readtime"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="12h 45m"

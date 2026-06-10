@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/libraryRow"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <ImageView
+        android:id="@+id/rowCover"
+        android:layout_width="80dp"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/hobbit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <TextView
+        android:id="@+id/rowTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        android:textSize="18sp"
+        android:textColor="@color/colorTextPrimary"
+        android:maxLines="2"
+        android:ellipsize="end"
+        app:layout_constraintStart_toEndOf="@id/rowCover"
+        app:layout_constraintEnd_toStartOf="@id/dotMenu"
+        app:layout_constraintTop_toTopOf="@id/rowCover"
+        android:layout_marginStart="12dp" />
+
+    <TextView
+        android:id="@+id/rowAuthor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Author"
+        android:textSize="14sp"
+        android:textColor="@color/colorTextSecondary"
+        app:layout_constraintStart_toStartOf="@id/rowTitle"
+        app:layout_constraintTop_toBottomOf="@id/rowTitle"
+        app:layout_constraintEnd_toStartOf="@id/dotMenu"
+        android:layout_marginTop="6dp" />
+
+    <TextView
+        android:id="@+id/chapterProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chapter 1 - 0%"
+        android:textSize="13sp"
+        android:textColor="@color/colorTextSecondary"
+        app:layout_constraintStart_toStartOf="@id/rowTitle"
+        app:layout_constraintTop_toBottomOf="@id/rowAuthor"
+        android:layout_marginTop="8dp" />
+
+    <ProgressBar
+        android:id="@+id/rowProgress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="8dp"
+        android:max="100"
+        android:progress="0"
+        android:progressTint="@color/colorProgressFill"
+        android:indeterminate="false"
+        app:layout_constraintStart_toStartOf="@id/rowTitle"
+        app:layout_constraintEnd_toStartOf="@id/dotMenu"
+        app:layout_constraintTop_toBottomOf="@id/chapterProgress"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp" />
+
+    <ImageButton
+        android:id="@+id/dotMenu"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_dot_menu"
+        android:background="@android:color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
