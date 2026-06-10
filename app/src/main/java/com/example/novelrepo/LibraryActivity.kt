@@ -1,11 +1,9 @@
 package com.example.novelrepo
 
+import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.novelrepo.data.Book
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class LibraryActivity : AppCompatActivity() {
 
@@ -13,22 +11,23 @@ class LibraryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_library)
 
-        val recyclerView = findViewById<RecyclerView>(R.id.recyclerLibrary)
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNav)
 
-        // Default Android placeholder image
-        val placeholder = android.R.drawable.ic_menu_gallery
-        val books = listOf(
-            Book("The Hobbit", "J.R.R. Tolkien", 60, R.drawable.hobbit_cover),
-            Book("Dune", "Frank Herbert", 40, placeholder),
-            Book("Mistborn", "Brandon Sanderson", 75, placeholder),
-            Book("1984", "George Orwell", 20, placeholder),
-            Book("The Witcher", "Andrzej Sapkowski", 55, placeholder),
-            Book("The Name of the Wind", "Patrick Rothfuss", 90, placeholder)
-        )
+        bottomNav.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_home -> {
+                    startActivity(Intent(this, MainActivity::class.java))
+                    true
+                }
+                R.id.nav_discover -> {
+                    startActivity(Intent(this, DiscoverActivity::class.java))
+                    true
+                }
+                R.id.nav_library -> true
 
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = BookAdapter(books) { book ->
-            Toast.makeText(this, "Clicked: ${book.title}", Toast.LENGTH_SHORT).show()
+                else -> false
+            }
         }
+        bottomNav.selectedItemId = R.id.nav_library
     }
 }

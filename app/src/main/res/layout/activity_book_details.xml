@@ -219,6 +219,7 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/card_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
@@ -229,6 +230,7 @@
                 />
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/continue_reading"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:layout_marginTop="28dp"
@@ -266,6 +268,7 @@
         app:labelVisibilityMode="labeled"
         android:background="#071019"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:itemIconTint="@color/nav_item_color"
+        app:itemTextColor="@color/nav_item_color"
         app:menu="@menu/bottom_nav_menu" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

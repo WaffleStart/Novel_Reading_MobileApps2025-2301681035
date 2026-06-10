@@ -20,6 +20,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".DiscoverActivity" />
+        <activity android:name=".LibraryActivity" />
+        <activity android:name=".BookDetailsActivity" />
+        <activity android:name=".ReaderActivity" />
+
     </application>
 
 </manifest>
