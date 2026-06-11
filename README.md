@@ -56,16 +56,15 @@ Code
     ResHelper.kt
 /viewmodel
     BookViewModel.kt
-/ui
-    BookDetailsActivity.kt
-    BookHorizontalAdapter.kt
-    CreateBookActivity.kt
-    DiscoverActivity.kt
-    LibraryActivity.kt
-    LibraryAdapter.kt
-    MainActivity.kt
-    ReaderActivity.kt
-    RecommendedAdapter.kt
+BookDetailsActivity.kt
+BookHorizontalAdapter.kt
+CreateBookActivity.kt
+DiscoverActivity.kt
+LibraryActivity.kt
+LibraryAdapter.kt
+MainActivity.kt
+ReaderActivity.kt
+RecommendedAdapter.kt
 ```
 ---
 ### **User Flow**
