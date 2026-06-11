@@ -17,7 +17,8 @@ data class Book(
     val percentRead: Int = 0,
     val currentChapter: Int = 0,
     val rating: Float = 0f,
-    val ratingCount: Int = 0
+    val ratingCount: Int = 0,
+    val isNewRelease: Boolean = false
 ) {
     fun genreList(): List<String> = if (genres.isBlank()) emptyList() else genres.split(",").map { it.trim() }
 }

@@ -4,12 +4,13 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-@Database(entities = [Book::class], version = 1, exportSchema = false)
+@Database(entities = [Book::class], version = 2, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun bookDao(): BookDao
 
@@ -22,7 +23,14 @@ abstract class AppDatabase : RoomDatabase() {
             }
 
         private fun buildDatabase(context: Context): AppDatabase {
+            val migration1 = object : Migration(1, 2) {
+                override fun migrate(db: SupportSQLiteDatabase) {
+                    db.execSQL("ALTER TABLE books ADD COLUMN isNewRelease INTEGER NOT NULL DEFAULT 0")
+                }
+            }
+
             return Room.databaseBuilder(context, AppDatabase::class.java, "novelrepo.db")
+                .addMigrations(migration1)
                 .addCallback(object : Callback() {
                     override fun onCreate(db: SupportSQLiteDatabase) {
                         super.onCreate(db)
@@ -44,7 +52,8 @@ abstract class AppDatabase : RoomDatabase() {
                                     percentRead = 62,
                                     currentChapter = 12,
                                     rating = 4.8f,
-                                    ratingCount = 12456
+                                    ratingCount = 12456,
+                                    isNewRelease = false
                                 ),
                                 Book(
                                     id = 2,
@@ -59,7 +68,8 @@ abstract class AppDatabase : RoomDatabase() {
                                     percentRead = 0,
                                     currentChapter = 0,
                                     rating = 4.5f,
-                                    ratingCount = 842
+                                    ratingCount = 842,
+                                    isNewRelease = false
                                 ),
                                 Book(
                                     id = 3,
@@ -74,7 +84,8 @@ abstract class AppDatabase : RoomDatabase() {
                                     percentRead = 0,
                                     currentChapter = 3,
                                     rating = 4.2f,
-                                    ratingCount = 412
+                                    ratingCount = 412,
+                                    isNewRelease = false
                                 ),
                                 Book(
                                     id = 4,
@@ -89,10 +100,10 @@ abstract class AppDatabase : RoomDatabase() {
                                     percentRead = 0,
                                     currentChapter = 0,
                                     rating = 4.6f,
-                                    ratingCount = 129
+                                    ratingCount = 129,
+                                    isNewRelease = false
                                 )
                             )
-
                         }
                     }
                 })

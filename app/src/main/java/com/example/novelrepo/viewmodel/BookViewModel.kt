@@ -19,9 +19,16 @@ class BookViewModel(application: Application) : AndroidViewModel(application) {
         val book = repo.getById(id)
         emit(book)
     }
-    fun toggleInLibrary(book: Book) {
-        val updated = book.copy(inLibrary = !book.inLibrary)
+    // Add these methods inside BookViewModel class
+    fun setInLibrary(book: com.example.novelrepo.data.Book, inLibrary: Boolean) {
         viewModelScope.launch {
+            val updated = book.copy(inLibrary = inLibrary, isNewRelease = book.isNewRelease)
+            repo.update(updated)
+        }
+    }
+    fun toggleInLibrary(book: com.example.novelrepo.data.Book) {
+        viewModelScope.launch {
+            val updated = book.copy(inLibrary = !book.inLibrary, isNewRelease = book.isNewRelease)
             repo.update(updated)
         }
     }
@@ -38,4 +45,12 @@ class BookViewModel(application: Application) : AndroidViewModel(application) {
             repo.delete(book)
         }
     }
+
+    // viewmodel/BookViewModel.kt
+    fun createBook(book: Book) {
+        viewModelScope.launch {
+            repo.insert(book)
+        }
+    }
+
 }

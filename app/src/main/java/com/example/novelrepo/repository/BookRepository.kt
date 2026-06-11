@@ -15,6 +15,8 @@ class BookRepository private constructor(context: Context) {
     suspend fun update(book: Book) = dao.update(book)
     suspend fun delete(book: Book) = dao.delete(book)
 
+    suspend fun insert(book: Book) = dao.insert(book)
+
     companion object {
         @Volatile private var INSTANCE: BookRepository? = null
         fun getInstance(context: Context): BookRepository =

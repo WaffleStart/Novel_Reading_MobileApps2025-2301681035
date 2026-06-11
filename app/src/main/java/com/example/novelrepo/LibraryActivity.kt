@@ -3,6 +3,7 @@ package com.example.novelrepo
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -44,9 +45,10 @@ class LibraryActivity : AppCompatActivity() {
                 viewModel.updateBook(updated)
             },
             onRemove = { book ->
-                // Remove from DB
-                viewModel.deleteBook(book)
+                viewModel.setInLibrary(book, false)
+                Toast.makeText(this, "\"${book.title}\" removed from library", Toast.LENGTH_SHORT).show()
             }
+
         )
 
         val recycler = findViewById<RecyclerView>(R.id.libraryRecycler)
@@ -76,7 +78,13 @@ class LibraryActivity : AppCompatActivity() {
                     startActivity(Intent(this, DiscoverActivity::class.java))
                     true
                 }
+
                 R.id.nav_library -> true
+
+                R.id.nav_create -> {
+                    startActivity(Intent(this, CreateBookActivity::class.java))
+                    true
+                }
                 else -> false
             }
         }

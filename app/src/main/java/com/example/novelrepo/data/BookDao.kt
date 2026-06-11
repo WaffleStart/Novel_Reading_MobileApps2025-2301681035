@@ -22,4 +22,8 @@ interface BookDao {
 
     @Delete
     suspend fun delete(book: Book)
+
+    @Insert
+    suspend fun insert(book: Book)
 }
+

@@ -190,6 +190,10 @@ class ReaderActivity : AppCompatActivity() {
                     startActivity(Intent(this, LibraryActivity::class.java))
                     true
                 }
+                R.id.nav_create -> {
+                    startActivity(Intent(this, CreateBookActivity::class.java))
+                    true
+                }
                 else -> false
             }
         }

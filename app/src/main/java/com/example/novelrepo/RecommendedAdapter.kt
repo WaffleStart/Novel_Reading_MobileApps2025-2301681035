@@ -1,6 +1,5 @@
 package com.example.novelrepo
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,7 +12,6 @@ import com.example.novelrepo.data.Book
 import com.example.novelrepo.util.ResHelper
 
 class RecommendedAdapter(
-    private val context: Context,
     private val onClick: (Book) -> Unit
 ) : ListAdapter<Book, RecommendedAdapter.ViewHolder>(Diff()) {
 
