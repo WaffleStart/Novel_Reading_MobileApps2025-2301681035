@@ -56,6 +56,7 @@ Code
     ResHelper.kt
 /viewmodel
     BookViewModel.kt
+
 BookDetailsActivity.kt
 BookHorizontalAdapter.kt
 CreateBookActivity.kt
